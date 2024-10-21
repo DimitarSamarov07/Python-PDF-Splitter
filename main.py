@@ -3,21 +3,25 @@ from math import ceil
 
 from pypdf import PdfReader, PdfWriter
 
-print("Simple PDF splitter(if you know what you're doing it's simple) :)")
-file_name_input = input("Hello poor soul! Make sure you have your files scanned. Now give me the file name or the path to it: ")
+print("**********************> Simple PDF splitter(if you know what you're doing it's simple) :) "
+      "<**********************\n")
+file_name_input = input("Hello poor soul! Make sure you have your files scanned. Now give me the file name or the "
+                        "path to it: ")
 print("Brr..robot magic")
 
 try:
     reader = PdfReader(file_name_input)
 except FileNotFoundError:
-    print("Peasant! No such file exists. Make sure you either provide the full path or the file is in the current directory."+
-          "Now start me again.. ")
+    print("Peasant! No such file exists. Make sure you either provide the full path or put the file in the current "
+          "directory. Include the extension. Now start me again.. ")
     exit(0)
 
 pages_count = len(reader.pages)
 print("Brr.. file is found. At least you know the file name, that's an achievement.")
-split_option = int(input(f"The input is exactly {pages_count} pages, so tell me how many pages should be each new file: "))
-optionChosen = input("Now tell me poor soul, do you want to use numbers for the file names(the other option is custom) ? (Y/N)")
+split_option = int(input(f"The input is exactly {pages_count} pages, so tell me how many pages "
+                         "should be each new file: "))
+optionChosen = input("Now tell me poor soul, do you want to use numbers for the file names"
+                     "(the other option is custom) ? (Y/N)")
 
 file_names = []
 folder_names = []
@@ -29,11 +33,13 @@ if optionChosen.lower() == "y":
         file_names.append(str(x) + ".pdf")
 else:
     folder_or_file = input("As you misery requested the custom method, now I'll have to ask if you want them "
-                           + "sorted into folders or not(Y/N)")
+                           "sorted into folders or not(Y/N)")
     if folder_or_file.lower() == "y":
         folders_chosen = True
-        match_file_name_or_not = input("\nYou really are a pretty lazy person. Fine. Should the file names match those of the folder ?\n"
-                                       + "Otherwise you will type a name for all the files without the extension (Y/the file name of choice): ")
+        match_file_name_or_not = input("\nYou really are a pretty lazy person. Fine. "
+                                       "Should the file names match those of the folder ?\n"
+                                       "Otherwise you will type a name for all the files without the extension"
+                                         " (Y/the file name of choice): ")
         if match_file_name_or_not.lower() != "y":
             same_name_for_files = match_file_name_or_not
 
