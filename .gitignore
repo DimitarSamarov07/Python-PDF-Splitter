@@ -1,0 +1,6 @@
+# .idea files straight to the garbage
+.idea
+
+# Build stuff
+build/
+dist/
