@@ -6,7 +6,9 @@ by just providing their names.
 - Python 3.12
 - Pip
 # Setup
+Run the following code in a terminal in your corresponding OS:
 ```
 pip install -r requirements.txt
 pyinstaller main.spec
 ```
+You will find the resulting file in the *dist* directory
